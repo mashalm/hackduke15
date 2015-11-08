@@ -50,6 +50,10 @@
         </div>
     </div>
 
+    <div id="displayText">
+      Poistion: <span id="positionSpan"> </span>
+    </div>
+
     <!--  Scripts-->
     <!-- jQuery library -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -57,39 +61,6 @@
     <script type="text/javascript" src="https://rawgit.com/davidjbradshaw/imagemap-resizer/master/js/imageMapResizer.min.js"></script>
 
     <script>
-      var controller = Leap.loop({enableGestures: true}, function(frame) {
-      var gestures = frame.gestures;
-      var rightHand = frame.hands[0];
-      if (frame.valid && gestures.length > 0) {
-      gestures.forEach(function(gesture) {
-      switch(gesture.type) {
-      case "circle":
-      console.log('circle!');
-      console.log(rightHand.screenPosition());
-      break;
-      case "keyTap":
-      console.log('keytep!');
-      console.log(rightHand.screenPosition());      
-      break;
-      case "screenTap":
-      console.log('screenTap!');
-      console.log(rightHand.screenPosition());
-      break;
-      case "swipe":
-      console.log('swipe!');
-      console.log(rightHand.screenPosition());
-      break;
-      }
-      });
-      }
-      })
-      .use('screenPosition', {scale: 0.25});
-
-      controller.use('boneHand', {
-      targetEl: document.body,
-      arm: true,
-      opacity: 0.5
-      });
     </script>
 </body>
 
