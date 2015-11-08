@@ -1,5 +1,6 @@
 
 $( document ).ready(function() {
+<<<<<<< HEAD
     mapPianoKeys();
     $('pianoKeyMap').imageMapResize();
     captureGestures();
@@ -101,3 +102,7 @@ function captureGestures() {
 	opacity: 0.5,
     });
 }
+=======
+    
+});
+>>>>>>> a7d8b644f7f289bd0021ce092f8b0c4a37738a65

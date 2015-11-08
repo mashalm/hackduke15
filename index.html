@@ -13,46 +13,70 @@
 <body>
 
     <div id= "pianoImgsContainer" width= "100%">
-        <div id="pianokey1Container" width="345px" style="display:inline;float:left">
-            <img src="images/pianokeysNotPressed1.png" />
+        <div id="pianokey1Container" class="key1">
         </div>
-        <div id="pianokey2Container" width="345px" margin-left:"345px" style="display:inline;float:left">
-            <img src="images/pianokeysNotPressed2.png" />
+        <div id="pianokey2Container" class="key2">
         </div>
-        <div id="pianokey3Container" width="345px" margin-left:"690px" style="display:inline;float:left">
-            <img src="images/pianokeysNotPressed3.png" />
-        </div>
-<!-- <br> -->
-        <div id="pianokey4Container" width="345px" margin-left:"1035px"  style="display:inline;float:left">
-            <img src="images/pianokeysNotPressed1.png" />
-        </div>
-        <div id="pianokey5Container" width="345px" style="display:inline;float:left">
-            <img src="images/pianokeysNotPressed2.png" />
-        </div>
-        <div id="pianokey6Container" width="345px" style="display:inline;float:left">
-            <img src="images/pianokeysNotPressed2.png" />
-        </div>
-        <div id="pianokey7Container" width="345px" style="display:inline;float:left">
-            <img src="images/pianokeysNotPressed3.png" />
+        <div id="pianokey3Container" class="key3">
         </div>
 
-        <div id="pianokey8Container" width="345px" style="display:inline;float:left">
-            <img src="images/pianokeysNotPressed1.png" />
+        <div id="pianokey4Container" class="key1">
         </div>
-        <div id="pianokey9Container" width="345px" style="display:inline;float:left">
-            <img src="images/pianokeysNotPressed2.png" />
+        <div id="pianokey5Container" class="key2">
         </div>
-        <div id="pianokey10Container" width="345px" style="display:inline;float:left">
-            <img src="images/pianokeysNotPressed2.png" />
+        <div id="pianokey6Container" class="key2">
         </div>
-        <div id="pianokey11Container" width="345px" style="display:inline;float:left">
-            <img src="images/pianokeysNotPressed3.png" />
+        <div id="pianokey7Container" class="key3">
+        </div>
+
+        <div id="pianokey8Container" class="key1">
+        </div>
+        <div id="pianokey9Container" class="key2">
+        </div>
+        <div id="pianokey10Container" class="key2">
+        </div>
+        <div id="pianokey11Container" class="key3">
         </div>
     </div>
 
     <div id="displayText">
       Poistion: <span id="positionSpan"> </span>
     </div>
+    <style>
+        .key1 {
+            background-image: url('images/pianokeysNotPressed1.png');
+            width: 80px;
+            height: 345px;
+            display:inline-block;
+            margin-left:-5px;
+            z-index:-1;
+        }
+        .key1:hover {
+            background-image: url('images/pianokeysPress1.png');
+        }
+        .key2 {
+            background-image: url('images/pianokeysNotPressed2.png');
+            width: 80px;
+            height: 345px;
+            display:inline-block;
+            margin-left:-6px;
+            z-index:-1;
+        }
+        .key2:hover {
+            background-image: url('images/pianokeysPress2.png');
+        }
+        .key3 {
+            background-image: url('images/pianokeysNotPressed3.png');
+            width: 80px;
+            height: 345px;
+            display:inline-block;
+            margin-left:-5px;
+            z-index:-1;
+        }
+        .key3:hover {
+            background-image: url('images/pianokeysPress3.png');
+        }
+    </style>
 
     <!--  Scripts-->
     <!-- jQuery library -->
