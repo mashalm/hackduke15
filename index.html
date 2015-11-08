@@ -5,6 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Piano</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.js"></script>
+    <script src="http://js.leapmotion.com/leap-0.6.4.min.js"></script>
+    <script src="http://js.leapmotion.com/leap-plugins-0.1.11.js"></script>
 </head>
 
 <body>
@@ -74,6 +77,42 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/pianoScripts.js"></script>
     <script type="text/javascript" src="https://rawgit.com/davidjbradshaw/imagemap-resizer/master/js/imageMapResizer.min.js"></script>
+
+    <script>
+      var controller = Leap.loop({enableGestures: true}, function(frame) {
+      var gestures = frame.gestures;
+      var rightHand = frame.hands[0];
+      if (frame.valid && gestures.length > 0) {
+      gestures.forEach(function(gesture) {
+      switch(gesture.type) {
+      case "circle":
+      console.log('circle!');
+      console.log(rightHand.screenPosition());
+      break;
+      case "keyTap":
+      console.log('keytep!');
+      console.log(rightHand.screenPosition());      
+      break;
+      case "screenTap":
+      console.log('screenTap!');
+      console.log(rightHand.screenPosition());
+      break;
+      case "swipe":
+      console.log('swipe!');
+      console.log(rightHand.screenPosition());
+      break;
+      }
+      });
+      }
+      })
+      .use('screenPosition', {scale: 0.25});
+
+      controller.use('boneHand', {
+      targetEl: document.body,
+      arm: true,
+      opacity: 0.5
+      });
+    </script>
 </body>
 
 </html>
